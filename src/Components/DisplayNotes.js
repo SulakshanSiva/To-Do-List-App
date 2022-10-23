@@ -1,9 +1,13 @@
 import React from 'react';
 
-function DisplayNotes(){
+function DisplayNotes(userToDo){
+    const showToDo = (data) =>  {
+        <div>{data.note}</div>
+    }
+
     return(
         <div>
-            <h1>Display Notes</h1>
+
         </div>
     );
 }
