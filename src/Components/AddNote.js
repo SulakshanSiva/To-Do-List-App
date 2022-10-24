@@ -8,14 +8,13 @@ function AddNote(props){
         props.addItem({
             note: note 
         });
-        //reset stae
+        //reset state
         setNote("");
     }
 
     return(
         <div>
-            <label htmlFor="note">Create Note</label>
-            <input type="text" id="note" value={note} onChange={e => setNote(e.target.value)}></input>
+            <input type="text" id="note" placeholder="Create TODO" value={note} onChange={e => setNote(e.target.value)}></input>
 
             <button className="btn btn-primary" type="button" onClick={addToDoNote}>
                 Add
