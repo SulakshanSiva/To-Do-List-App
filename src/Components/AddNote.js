@@ -5,8 +5,10 @@ function AddNote(props){
     const [note, setNote] = useState("");
 
      const addToDoNote = () =>{
-        console.log(note);
-        //reset state
+        props.addItem({
+            note: note 
+        });
+        //reset stae
         setNote("");
     }
 

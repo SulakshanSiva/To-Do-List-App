@@ -1,13 +1,17 @@
 import React from 'react';
 
-function DisplayNotes(userToDo){
-    const showToDo = (data) =>  {
-        <div>{data.note}</div>
-    }
+function DisplayNotes(props){
 
+    const showNote = (item) => {
+        return(
+                <div>
+                    <p>{item.note}</p>
+                </div>
+        );
+    }
     return(
         <div>
-
+            {props.notesList.map(showNote)}
         </div>
     );
 }
