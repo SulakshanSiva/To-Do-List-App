@@ -4,16 +4,17 @@ function DisplayNotes(props){
 
     const showNote = (item) => {
         return(
-            <div className='bg-primary w-50 mx-auto rounded'>
+            <div className='bg-primary w-50 d-flex mx-auto mt-3'>
                 <p>{item.note}</p>
             </div>
         );
     }
 
     return(
-        <div>
-            {props.notesList.map(showNote)}
+        <div className=''>
+                <p className='float-left'>{props.notesList.map(showNote)}</p>
         </div>
+
     );
 }
 

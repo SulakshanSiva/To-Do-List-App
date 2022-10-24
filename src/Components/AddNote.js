@@ -13,8 +13,8 @@ function AddNote(props){
     }
 
     return(
-        <div>
-            <input type="text" id="note" placeholder="Create TODO" value={note} onChange={e => setNote(e.target.value)}></input>
+        <div className='d-flex justify-content-center mt-4'>
+            <input className="w-25" type="text" id="note" placeholder="Create TODO" value={note} onChange={e => setNote(e.target.value)}></input>
 
             <button className="btn btn-primary" type="button" onClick={addToDoNote}>
                 Add
