@@ -44,7 +44,7 @@ function App() {
         fetch("http://localhost:3000/list", requestOptions)
         .then((response) => response.json())
         .then((toDoList) =>{
-            currentList.push(note);
+            currentList.push(toDoList);
             setToDoList({list : currentList});
         });
         
