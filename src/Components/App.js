@@ -14,6 +14,21 @@ function App() {
         .then((toDoList) => setToDoList({list: toDoList}))
     }, []);
 
+    const deleteNote = (item) => {
+        const currentList = toDoList["list"];
+        const requestOptions = {
+            method: "DELETE"
+        }
+        fetch(`http://localhost:3000/list/${item.id}`, requestOptions)
+        .then((response) =>{
+            if(response.ok){
+                const index = currentList.indexOf(item);
+                currentList.splice(index, 1);
+                setToDoList({list: currentList})
+            }
+        });
+    }  
+
     //callback function
     const addNoteToList = (note) => {
         let currentList = toDoList["list"];
@@ -35,12 +50,11 @@ function App() {
         
     }
 
-
     return (
     <div className="App">
         <Navbar/>
         <AddNote addItem={addNoteToList}/>
-        <DisplayNotes notesList={toDoList["list"]}/>
+        <DisplayNotes deleteNote={deleteNote} notesList={toDoList["list"]}/>
         
     </div>
   );
